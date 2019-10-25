@@ -48,8 +48,8 @@ public class ProductController {
     }
 
     @GetMapping
-    public Page<Product> query(String ids, BigDecimal minRewardRate, BigDecimal maxRewardRate,
-                               String status,@RequestParam(defaultValue = "0") int pageNum,
+    public Page<Product> query(String ids, BigDecimal minRewardRate, BigDecimal maxRewardRate, String status,
+                               @RequestParam(defaultValue = "0") int pageNum,
                                @RequestParam(defaultValue = "10") int pageSize){
         LOG.info("查询产品，ids={}，minRewardRate={}，maxRewardRate={}，status={}, pageNum={}, pageSize={}");
 
