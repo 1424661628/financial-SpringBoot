@@ -2,6 +2,7 @@ package com.lvmen.manager.service;
 
 import com.lvmen.entity.Product;
 import com.lvmen.entity.enums.ProductStatus;
+import com.lvmen.manager.error.ErrorEnum;
 import com.lvmen.manager.repositories.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -81,7 +82,8 @@ public class ProductService {
      * @param product
      */
     private void checkProduct(Product product) {
-        Assert.notNull(product.getId(),"编号不可为空");
+
+        Assert.notNull(product.getId(), ErrorEnum.ID_NOT_NULL.getCode()); // 抛出一个运行时异常，非法参数异常，异常交由自定义的异常处理器处理
         // @TODO 其他非空校验
 
         Assert.isTrue(BigDecimal.ZERO.compareTo(product.getRewardRate()) < 0 && BigDecimal.valueOf(30)
