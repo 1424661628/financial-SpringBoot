@@ -7,5 +7,5 @@ SpringBoot开发理财系统
 3. 模块化开发
 4. mysql数据库
 5. SpringDataJPA
-
+6. junit
 
