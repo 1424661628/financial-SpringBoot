@@ -1,6 +1,8 @@
 package com.lvmen.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -28,10 +30,27 @@ public class Product {
     // 收益率，主要与其他数据相乘，所以使用BigDecimal
     private BigDecimal rewardRate;
     private String memo;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") // SpringBoot默认反序列化的时间格式'yyyy-MM-dd'T'HH:mm:ss.SSS'
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createAt;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateAt;
     private String createUser;
     private String updateUser;
+
+    public Product() {
+    }
+
+    public Product(String id, String name, String status, BigDecimal thresholdAmount, BigDecimal stepAmount, BigDecimal rewardRate) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+        this.thresholdAmount = thresholdAmount;
+        this.stepAmount = stepAmount;
+        this.rewardRate = rewardRate;
+    }
 
     public String toString(){ // 使用commons-lang3的反射 重写toString()
         return ReflectionToStringBuilder.toString(this);

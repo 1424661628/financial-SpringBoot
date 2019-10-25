@@ -43,7 +43,7 @@ public class ProductController {
 
         Product product = service.findOne(id);
 
-        LOG.info("查询单个产品结果", product);
+        LOG.info("查询单个产品结果,结果={}", product);
         return product;
     }
 

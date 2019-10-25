@@ -6,6 +6,9 @@ package com.lvmen.manager.error;
  */
 public enum ErrorEnum {
     ID_NOT_NULL("F001", "编号不可为空", false),
+    REWARDRATE_ILLEGAL("F002", "收益率范围错误", false),
+    STEPAMOUNT_ILLEGAL("F003", "投资步长需为整数", false),
+
     //...
     UNKNOWN("999","未知异常",false)
     ;

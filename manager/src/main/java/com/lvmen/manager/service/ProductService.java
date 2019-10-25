@@ -87,10 +87,10 @@ public class ProductService {
         // @TODO 其他非空校验
 
         Assert.isTrue(BigDecimal.ZERO.compareTo(product.getRewardRate()) < 0 && BigDecimal.valueOf(30)
-                .compareTo(product.getRewardRate()) >= 0,"收益率范围不正确");
+                .compareTo(product.getRewardRate()) >= 0,ErrorEnum.REWARDRATE_ILLEGAL.getCode());
 
         Assert.isTrue(BigDecimal.valueOf(product.getStepAmount().longValue())
-                .compareTo(product.getStepAmount()) == 0,"投资步长需为整数");
+                .compareTo(product.getStepAmount()) == 0,ErrorEnum.STEPAMOUNT_ILLEGAL.getCode());
 
     }
 
