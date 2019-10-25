@@ -2,6 +2,7 @@ package com.lvmen.manager.controller;
 
 import com.lvmen.entity.Product;
 import com.lvmen.manager.service.ProductService;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +28,7 @@ public class ProductController {
     @Autowired
     private ProductService service;
 
+    @ApiOperation(value = "创建产品", notes = "根据对应业务规则添加相应的产品")
     @PostMapping
     public Product addProduct(@RequestBody Product product){
         LOG.info("创建产品，参数：{}", product);

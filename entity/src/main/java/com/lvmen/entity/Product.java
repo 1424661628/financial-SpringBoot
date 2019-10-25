@@ -1,6 +1,8 @@
 package com.lvmen.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -13,6 +15,7 @@ import java.util.Date;
  * 产品
  */
 @Entity
+//@ApiModel(value = "",description = "")
 public class Product {
     @Id
     private String id;
@@ -20,6 +23,7 @@ public class Product {
     /**
      * @see com.lvmen.entity.enums.ProductStatus
      */
+    @ApiModelProperty(value = "状态", dataType = "com.lvmen.entity.enums.ProductStatus")
     private String status;
     // 起投金额
     private BigDecimal thresholdAmount;
