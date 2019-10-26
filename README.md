@@ -10,3 +10,4 @@ SpringBoot开发理财系统
 6. junit
 7. h2内存数据库用作测试
 8. Swagger生成接口文档
+9. 使用jsonrpc4j进行服务间的调用
