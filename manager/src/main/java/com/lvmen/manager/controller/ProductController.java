@@ -66,7 +66,7 @@ public class ProductController {
         Pageable pageable = new PageRequest(pageNum, pageSize);
         Page<Product> page = service.query(idList, minRewardRate, maxRewardRate, statusList, pageable);
 
-        LOG.info("查询产品结果", page);
+        LOG.info("查询产品结果", page.getContent());
         return page;
     }
 

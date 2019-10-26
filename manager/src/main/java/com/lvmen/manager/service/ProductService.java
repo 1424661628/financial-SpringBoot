@@ -94,7 +94,6 @@ public class ProductService {
 
     }
 
-
     /**
      * 查询单个商品
      * @param id 商品id
@@ -103,14 +102,10 @@ public class ProductService {
     public Product findOne(String id){
         Assert.notNull(id,"需要产品参数");
         LOG.debug("查询单个产品，id={}", id);
-
-        Product product = repository.findOne(id); //
-
-        LOG.debug("查询单个产品,结果={}", product);
-
-        return product;
+        Product result = repository.findOne(id); //
+        LOG.debug("查询单个产品,结果={}", result);
+        return result;
     }
-
 
     /**
      * 分页查询产品

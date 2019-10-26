@@ -11,8 +11,9 @@ spring:
 server:
   port: 8081
   context-path: /manager # 应用上下文路径
-logging:
-  level: debug
 swagger:
-  groupName: manger
+  groupName: manager
   basePackage: com.lvmen.manager.controller
+logging:
+  level:
+    com.googlecode.jsonrpc4j: debug
