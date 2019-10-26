@@ -9,3 +9,4 @@ SpringBoot开发理财系统
 5. SpringDataJPA
 6. junit
 7. h2内存数据库用作测试
+8. Swagger生成接口文档
